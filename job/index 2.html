@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="og:site_name" content="Temple University Capstone Fall 2020 GitHub Statistics"/><link rel="canonical" href="https://applebaumian.github.io/Team-GitHub-Statistics/job"/><meta name="twitter:url" content="https://applebaumian.github.io/Team-GitHub-Statistics/job"/><meta name="og:url" content="https://applebaumian.github.io/Team-GitHub-Statistics/job"/><title>Job Scanner | Temple University Capstone Fall 2020 GitHub Statistics</title><meta name="twitter:title" content="Job Scanner | Temple University Capstone Fall 2020 GitHub Statistics"/><meta name="og:title" content="Job Scanner | Temple University Capstone Fall 2020 GitHub Statistics"/><meta name="description" content="Live visualization of data provided by GitHub"/><meta name="twitter:description" content="Live visualization of data provided by GitHub"/><meta name="og:description" content="Live visualization of data provided by GitHub"/><meta name="twitter:card" content="summary"/><link rel="stylesheet" href="/styles.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/images/favicon.png" type="image/png"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to Temple University Capstone Fall 2020 GitHub Statistics"/></head><body><header><div class="wrapper"><a class="site-name" href="/">Temple University Capstone Fall 2020 GitHub Statistics</a><nav><ul><li><a href="/knight">A Knight Under Siege</a></li><li><a href="/chalk">Chalkboard</a></li><li><a href="/embeded">Embeded Smart Vision</a></li><li><a href="/rogue">God Gone Rogue</a></li><li><a class="selected" href="/job">Job Scanner</a></li><li><a href="/geo">GeoTracker</a></li><li><a href="/what">WhatIsThis</a></li></ul></nav></div></header><div class="wrapper"><h1>Job Scanner</h1><ul class="item-list"></ul><canvas id="myChart" width="100" height="100"></canvas></div><footer><p>Generated using <a href="https://github.com/johnsundell/publish">Publish</a></p></footer><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script><script>var ctx = document.getElementById("myChart").getContext("2d");
+
+var data = {
+	labels: ["Chocolate", "Vanilla", "Strawberry"],
+	datasets: [
+		{
+			label: "Blue",
+			backgroundColor: "blue",
+			data: [3,7,4]
+		},
+		{
+			label: "Red",
+			backgroundColor: "red",
+			data: [4,3,5]
+		},
+		{
+			label: "Green",
+			backgroundColor: "green",
+			data: [7,2,6]
+		}
+	]
+};
+
+var myBarChart = new Chart(ctx, {
+	type: 'bar',
+	data: data,
+	options: {
+		barValueSpacing: 20,
+		scales: {
+			yAxes: [{
+				ticks: {
+					min: 0,
+				}
+			}]
+		}
+	}
+});</script></body></html>
