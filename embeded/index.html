@@ -67,6 +67,13 @@
 		</canvas>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 	<script>
+var gh = new GitHub({
+   username: 'Applebaumian',
+   /* also acceptable:
+	*/
+	  token: '5f32a816edc96d00369c3efd9d15d70f1cd0cc7e'
+});
+
 let reposEmbeddedSmartVision = gh.getRepo("Capstone-Projects-2020-Fall","Embedded-Smart-Vision");
 console.log(reposEmbeddedSmartVision);
 reposEmbeddedSmartVision.getContributorStats().then(function(response) {
@@ -196,6 +203,13 @@ var AddSubdata = {
 		</canvas>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 	<script>
+var gh = new GitHub({
+   username: 'Applebaumian',
+   /* also acceptable:
+	*/
+	  token: '5f32a816edc96d00369c3efd9d15d70f1cd0cc7e'
+});
+
 let reposEmbeddedSmartVisionServer = gh.getRepo("Capstone-Projects-2020-Fall","Embedded-Smart-Vision-Server");
 console.log(reposEmbeddedSmartVisionServer);
 reposEmbeddedSmartVisionServer.getContributorStats().then(function(response) {

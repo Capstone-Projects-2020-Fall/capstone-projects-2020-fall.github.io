@@ -67,6 +67,13 @@
 		</canvas>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 	<script>
+var gh = new GitHub({
+   username: 'Applebaumian',
+   /* also acceptable:
+	*/
+	  token: '5f32a816edc96d00369c3efd9d15d70f1cd0cc7e'
+});
+
 let reposWhatIsThis_Backend = gh.getRepo("Capstone-Projects-2020-Fall","WhatIsThis_Backend");
 console.log(reposWhatIsThis_Backend);
 reposWhatIsThis_Backend.getContributorStats().then(function(response) {
@@ -196,6 +203,13 @@ var AddSubdata = {
 		</canvas>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 	<script>
+var gh = new GitHub({
+   username: 'Applebaumian',
+   /* also acceptable:
+	*/
+	  token: '5f32a816edc96d00369c3efd9d15d70f1cd0cc7e'
+});
+
 let reposWhatIsThis_Frontend = gh.getRepo("Capstone-Projects-2020-Fall","WhatIsThis_Frontend");
 console.log(reposWhatIsThis_Frontend);
 reposWhatIsThis_Frontend.getContributorStats().then(function(response) {
