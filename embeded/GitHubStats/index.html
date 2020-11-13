@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="og:site_name" content="Temple University Capstone Fall 2020 GitHub Statistics"/>
+		<link rel="canonical" href="https://capstone-projects-2020-fall.github.io/embeded/GitHubStats"/>
+		<meta name="twitter:url" content="https://capstone-projects-2020-fall.github.io/embeded/GitHubStats"/>
+		<meta name="og:url" content="https://capstone-projects-2020-fall.github.io/embeded/GitHubStats"/>
+		<title>Server | Temple University Capstone Fall 2020 GitHub Statistics</title>
+		<meta name="twitter:title" content="Server | Temple University Capstone Fall 2020 GitHub Statistics"/>
+		<meta name="og:title" content="Server | Temple University Capstone Fall 2020 GitHub Statistics"/>
+		<meta name="description"/>
+		<meta name="twitter:description"/>
+		<meta name="og:description"/>
+		<meta name="twitter:card" content="summary"/>
+		<link rel="stylesheet" href="/styles.css" type="text/css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="shortcut icon" href="/images/favicon.png" type="image/png"/>
+		<link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to Temple University Capstone Fall 2020 GitHub Statistics"/>
+	</head>
+	<body class="item-page">
+		<header>
+			<div class="wrapper">
+				<a class="site-name" href="/">Temple University Capstone Fall 2020 GitHub Statistics</a>
+				<nav>
+					<ul>
+						<li>
+							<a href="/knight">A Knight Under Siege</a>
+						</li>
+						<li>
+							<a href="/chalk">Chalkboard</a>
+						</li>
+						<li>
+							<a class="selected" href="/embeded">Embeded Smart Vision</a>
+						</li>
+						<li>
+							<a href="/rogue">God Gone Rogue</a>
+						</li>
+						<li>
+							<a href="/job">Job Scanner</a>
+						</li>
+						<li>
+							<a href="/geo">GeoTracker</a>
+						</li>
+						<li>
+							<a href="/what">WhatIsThis</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="wrapper">
+			<article>
+				<div class="content"><script src="/js/github.js">
+</script>
+<!--
+	<h3>Pull Requests</h3>
+
+<canvas id="PullRequests302678745" width="400" height="400">
+		</canvas>
+	<h3>Additions vs Deletions</h3>
+<canvas id="AdditionsDeletions302678745" width="400" height="400">
+		</canvas>
+-->
+<h3>Commits </h3>
+<canvas id="Commits302678745" width="400" height="400">
+		</canvas>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+	<script>
+let reposEmbeddedSmartVision = gh.getRepo("Capstone-Projects-2020-Fall","Embedded-Smart-Vision");
+console.log(reposEmbeddedSmartVision);
+reposEmbeddedSmartVision.getContributorStats().then(function(response) {
+        return response;
+	})
+	.then(function(data) {
+		var members = data;
+		console.log(members);
+	var commitsctx = document.getElementById("Commits302678745").getContext("2d");
+var commitMemberLabelsEmbeddedSmartVision = [];
+var commitdataEmbeddedSmartVision = [];
+//console.log(members.data[0].author.login);
+var count = 0;
+for (member in members.data){
+console.log(members.data[count].author.login);
+commitMemberLabelsEmbeddedSmartVision.push(members.data[count].author.login);
+console.log(members.data[count].total);
+commitdataEmbeddedSmartVision.push(members.data[count].total);
+count++;
+}
+console.log(commitMemberLabelsEmbeddedSmartVision);
+console.log(commitdataEmbeddedSmartVision);
+var CommitsdataEmbeddedSmartVision = {
+		labels: commitMemberLabelsEmbeddedSmartVision,
+		datasets: [
+		{
+			label: "Commits",
+			backgroundColor: "orange",
+			data: commitdataEmbeddedSmartVision
+		}
+		]
+	};
+	var CommitsChartEmbeddedSmartVision = new Chart(commitsctx, {
+		type: 'bar',
+		data: CommitsdataEmbeddedSmartVision,
+		options: {
+			barValueSpacing: 20,
+			scales: {
+				yAxes: [{
+					ticks: {
+						min: 0,
+					}
+				}]
+			}
+		}
+	});
+//Commitsdata.labels = commitMemberLabels;
+//CommitsChart.data = commitdata;
+console.log(CommitsChartEmbeddedSmartVision.data);
+		return members;
+	})
+/*
+var PRdata = {
+		labels: ["Applebaumian", "likhongomes", "rotywonka"],
+		datasets: [
+		{
+			label: "Pull Requests",
+			backgroundColor: "blue",
+			data: [3, 7, 4]
+		},
+		{
+			label: "Reviews",
+			backgroundColor: "green",
+			data: [4, 3, 5]
+		}
+		]
+	};
+
+var AddSubdata = {
+		labels: ["Applebaumian", "likhongomes", "rotywonka"],
+		datasets: [
+		{
+			label: "Additions",
+			backgroundColor: "green",
+			data: [3, 7, 4]
+		},
+		{
+			label: "Subtractions",
+			backgroundColor: "red",
+			data: [4, 3, 5]
+		}
+		]
+	};
+
+	var PullRequestsBarChart = new Chart(prctx, {
+		type: 'bar',
+		data: PRdata,
+		options: {
+			barValueSpacing: 20,
+			scales: {
+				yAxes: [{
+					ticks: {
+						min: 0,
+					}
+				}]
+			}
+		}
+	});
+	var AddSubBarChart = new Chart(addsubctx, {
+		type: 'bar',
+		data: AddSubdata,
+		options: {
+			barValueSpacing: 20,
+			scales: {
+				yAxes: [{
+					ticks: {
+						min: 0,
+					}
+				}]
+			}
+		}
+	});
+	*/
+	</script><h1>Server</h1><script src="/js/github.js">
+</script>
+<!--
+	<h3>Pull Requests</h3>
+
+<canvas id="PullRequests308132508" width="400" height="400">
+		</canvas>
+	<h3>Additions vs Deletions</h3>
+<canvas id="AdditionsDeletions308132508" width="400" height="400">
+		</canvas>
+-->
+<h3>Commits </h3>
+<canvas id="Commits308132508" width="400" height="400">
+		</canvas>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+	<script>
+let reposEmbeddedSmartVisionServer = gh.getRepo("Capstone-Projects-2020-Fall","Embedded-Smart-Vision-Server");
+console.log(reposEmbeddedSmartVisionServer);
+reposEmbeddedSmartVisionServer.getContributorStats().then(function(response) {
+        return response;
+	})
+	.then(function(data) {
+		var members = data;
+		console.log(members);
+	var commitsctx = document.getElementById("Commits308132508").getContext("2d");
+var commitMemberLabelsEmbeddedSmartVisionServer = [];
+var commitdataEmbeddedSmartVisionServer = [];
+//console.log(members.data[0].author.login);
+var count = 0;
+for (member in members.data){
+console.log(members.data[count].author.login);
+commitMemberLabelsEmbeddedSmartVisionServer.push(members.data[count].author.login);
+console.log(members.data[count].total);
+commitdataEmbeddedSmartVisionServer.push(members.data[count].total);
+count++;
+}
+console.log(commitMemberLabelsEmbeddedSmartVisionServer);
+console.log(commitdataEmbeddedSmartVisionServer);
+var CommitsdataEmbeddedSmartVisionServer = {
+		labels: commitMemberLabelsEmbeddedSmartVisionServer,
+		datasets: [
+		{
+			label: "Commits",
+			backgroundColor: "orange",
+			data: commitdataEmbeddedSmartVisionServer
+		}
+		]
+	};
+	var CommitsChartEmbeddedSmartVisionServer = new Chart(commitsctx, {
+		type: 'bar',
+		data: CommitsdataEmbeddedSmartVisionServer,
+		options: {
+			barValueSpacing: 20,
+			scales: {
+				yAxes: [{
+					ticks: {
+						min: 0,
+					}
+				}]
+			}
+		}
+	});
+//Commitsdata.labels = commitMemberLabels;
+//CommitsChart.data = commitdata;
+console.log(CommitsChartEmbeddedSmartVisionServer.data);
+		return members;
+	})
+/*
+var PRdata = {
+		labels: ["Applebaumian", "likhongomes", "rotywonka"],
+		datasets: [
+		{
+			label: "Pull Requests",
+			backgroundColor: "blue",
+			data: [3, 7, 4]
+		},
+		{
+			label: "Reviews",
+			backgroundColor: "green",
+			data: [4, 3, 5]
+		}
+		]
+	};
+
+var AddSubdata = {
+		labels: ["Applebaumian", "likhongomes", "rotywonka"],
+		datasets: [
+		{
+			label: "Additions",
+			backgroundColor: "green",
+			data: [3, 7, 4]
+		},
+		{
+			label: "Subtractions",
+			backgroundColor: "red",
+			data: [4, 3, 5]
+		}
+		]
+	};
+
+	var PullRequestsBarChart = new Chart(prctx, {
+		type: 'bar',
+		data: PRdata,
+		options: {
+			barValueSpacing: 20,
+			scales: {
+				yAxes: [{
+					ticks: {
+						min: 0,
+					}
+				}]
+			}
+		}
+	});
+	var AddSubBarChart = new Chart(addsubctx, {
+		type: 'bar',
+		data: AddSubdata,
+		options: {
+			barValueSpacing: 20,
+			scales: {
+				yAxes: [{
+					ticks: {
+						min: 0,
+					}
+				}]
+			}
+		}
+	});
+	*/
+	</script></div>
+				<span>Tagged with: </span>
+				<ul class="tag-list"></ul>
+			</article>
+		</div>
+		<footer>
+			<p>Generated using 
+				<a href="https://github.com/johnsundell/publish">Publish</a>
+			</p>
+		</footer>
+	</body>
+</html>
