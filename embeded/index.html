@@ -48,8 +48,9 @@
 					</ul>
 				</nav>
 			</div>
-		</header>
-		<script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script>
+		</header><script type="module">
+  import { Octokit } from "https://cdn.skypack.dev/@octokit/rest";
+</script>
 		<div class="wrapper">
 			<h1>Embeded Smart Vision</h1><script src="/js/github.js">
 </script>
@@ -66,17 +67,27 @@
 <canvas id="Commits302678745" width="400" height="400">
 		</canvas>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
-	<script>
-var gh = new GitHub({
-   username: 'Applebaumian',
-   /* also acceptable:
-	*/
-	  token: '5f32a816edc96d00369c3efd9d15d70f1cd0cc7e'
-});
+	<script type="module">
+import {
+				Octokit
+			} from "https://cdn.skypack.dev/@octokit/rest";
+			const octokit = new Octokit({
+	auth: "03c149a7b3083cee718fc8c9c02e6e918400c710",
+	userAgent: 'Applebaumian',
 
-let reposEmbeddedSmartVision = gh.getRepo("Capstone-Projects-2020-Fall","Embedded-Smart-Vision");
-console.log(reposEmbeddedSmartVision);
-reposEmbeddedSmartVision.getContributorStats().then(function(response) {
+
+	baseUrl: 'https://api.github.com',
+
+	log: {
+		debug: () => {},
+		info: () => {},
+		warn: console.warn,
+		error: console.error
+	},
+
+	})
+
+octokit.repos.getContributorsStats({ owner: "Capstone-Projects-2020-Fall" , repo: "Embedded-Smart-Vision"}).then(function(response) {
         return response;
 	})
 	.then(function(data) {
@@ -87,7 +98,7 @@ var commitMemberLabelsEmbeddedSmartVision = [];
 var commitdataEmbeddedSmartVision = [];
 //console.log(members.data[0].author.login);
 var count = 0;
-for (member in members.data){
+for (const member in members.data){
 console.log(members.data[count].author.login);
 commitMemberLabelsEmbeddedSmartVision.push(members.data[count].author.login);
 console.log(members.data[count].total);
@@ -202,17 +213,27 @@ var AddSubdata = {
 <canvas id="Commits308132508" width="400" height="400">
 		</canvas>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
-	<script>
-var gh = new GitHub({
-   username: 'Applebaumian',
-   /* also acceptable:
-	*/
-	  token: '5f32a816edc96d00369c3efd9d15d70f1cd0cc7e'
-});
+	<script type="module">
+import {
+				Octokit
+			} from "https://cdn.skypack.dev/@octokit/rest";
+			const octokit = new Octokit({
+	auth: "03c149a7b3083cee718fc8c9c02e6e918400c710",
+	userAgent: 'Applebaumian',
 
-let reposEmbeddedSmartVisionServer = gh.getRepo("Capstone-Projects-2020-Fall","Embedded-Smart-Vision-Server");
-console.log(reposEmbeddedSmartVisionServer);
-reposEmbeddedSmartVisionServer.getContributorStats().then(function(response) {
+
+	baseUrl: 'https://api.github.com',
+
+	log: {
+		debug: () => {},
+		info: () => {},
+		warn: console.warn,
+		error: console.error
+	},
+
+	})
+
+octokit.repos.getContributorsStats({ owner: "Capstone-Projects-2020-Fall" , repo: "Embedded-Smart-Vision-Server"}).then(function(response) {
         return response;
 	})
 	.then(function(data) {
@@ -223,7 +244,7 @@ var commitMemberLabelsEmbeddedSmartVisionServer = [];
 var commitdataEmbeddedSmartVisionServer = [];
 //console.log(members.data[0].author.login);
 var count = 0;
-for (member in members.data){
+for (const member in members.data){
 console.log(members.data[count].author.login);
 commitMemberLabelsEmbeddedSmartVisionServer.push(members.data[count].author.login);
 console.log(members.data[count].total);

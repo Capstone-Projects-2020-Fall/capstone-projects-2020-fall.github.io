@@ -66,17 +66,27 @@
 <canvas id="Commits301256981" width="400" height="400">
 		</canvas>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
-	<script>
-var gh = new GitHub({
-   username: 'Applebaumian',
-   /* also acceptable:
-	*/
-	  token: '5f32a816edc96d00369c3efd9d15d70f1cd0cc7e'
-});
+	<script type="module">
+import {
+				Octokit
+			} from "https://cdn.skypack.dev/@octokit/rest";
+			const octokit = new Octokit({
+	auth: "03c149a7b3083cee718fc8c9c02e6e918400c710",
+	userAgent: 'Applebaumian',
 
-let reposRogue99 = gh.getRepo("Capstone-Projects-2020-Fall","Rogue99");
-console.log(reposRogue99);
-reposRogue99.getContributorStats().then(function(response) {
+
+	baseUrl: 'https://api.github.com',
+
+	log: {
+		debug: () => {},
+		info: () => {},
+		warn: console.warn,
+		error: console.error
+	},
+
+	})
+
+octokit.repos.getContributorsStats({ owner: "Capstone-Projects-2020-Fall" , repo: "Rogue99"}).then(function(response) {
         return response;
 	})
 	.then(function(data) {
@@ -87,7 +97,7 @@ var commitMemberLabelsRogue99 = [];
 var commitdataRogue99 = [];
 //console.log(members.data[0].author.login);
 var count = 0;
-for (member in members.data){
+for (const member in members.data){
 console.log(members.data[count].author.login);
 commitMemberLabelsRogue99.push(members.data[count].author.login);
 console.log(members.data[count].total);
